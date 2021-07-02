@@ -12,6 +12,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -108,6 +109,9 @@ public class MainActivity extends AppCompatActivity{
                 String latitude = String.valueOf(location.getLatitude());
                 String longitude = String.valueOf(location.getLongitude());
 
+                Log.i("MainActivity", latitude);
+                Log.i("MainActivity", longitude);
+
                 RequestParams params = new RequestParams() ;
                 params.put("lat", latitude);
                 params.put("lon", longitude);
@@ -177,8 +181,8 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onPause() {
         super.onPause();
-        if(locationManager != null){
-            locationManager.removeUpdates(locationListener);
-        }
+        //if(locationManager != null){
+          //  locationManager.removeUpdates(locationListener);
+        //}
     }
 }
